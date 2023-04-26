@@ -26,8 +26,12 @@ jobs:
         with:
           files: packages/auto-pub-poc/**
 
+      - name: Release if any file(s) in the folder change
+        if: steps.changed-files-specific.outputs.any_changed == 'true'
+        run: echo auto-pub-poc was updated
+
   release:
-    needs: prepare-auto-pub
+    needs: [prepare,prepare-auto-pub]
     runs-on: ubuntu-latest
 
     steps:
