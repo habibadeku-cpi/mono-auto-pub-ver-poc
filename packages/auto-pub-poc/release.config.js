@@ -1,5 +1,4 @@
 module.exports = {
-    tagFormat: 'libv1_${version}',
     branches: [
       'main',
       {
