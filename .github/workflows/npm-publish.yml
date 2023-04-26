@@ -51,5 +51,5 @@ jobs:
         GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
         NODE_AUTH_TOKEN: ${{ secrets.GH_TOKEN }}
         # NPM_TOKEN: ${{ secrets.GH_TOKEN }}
-      working-directory: ./packages/auto-pub-poc
+      # working-directory: ./packages/auto-pub-poc
       run: cd packages/auto-pub-poc && npx semantic-release
