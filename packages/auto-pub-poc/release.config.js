@@ -9,6 +9,9 @@ module.exports = {
     plugins: [
       '@semantic-release/commit-analyzer',
       '@semantic-release/release-notes-generator',
+      {
+        "extends": "semantic-release-monorepo"
+      },
       [
         '@semantic-release/changelog',
         {
@@ -25,5 +28,5 @@ module.exports = {
           message: 'chore(release): set `package.json` to ${nextRelease.version} [skip ci]\n\n${nextRelease.notes}'
         }
       ]
-    ]
+    ],
   }
