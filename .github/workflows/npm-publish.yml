@@ -37,7 +37,7 @@ jobs:
 
   release-auto-pub-poc:
     needs: prepare-auto-pub
-    if: prepare-auto-pub.steps.changed-files-specific.outputs.any_changed == 'true'
+    if: needs.prepare-auto-pub.steps.changed-files-specific.outputs.any_changed == 'true'
     runs-on: ubuntu-latest
 
     steps:
@@ -89,7 +89,7 @@ jobs:
 
   release-auto-pub-poc2:
     needs: prepare-auto-pub2
-    if: prepare-auto-pub2.steps.changed-files-specific.outputs.any_changed == 'true'
+    if: needs.prepare-auto-pub2.steps.changed-files-specific.outputs.any_changed == 'true'
     runs-on: ubuntu-latest
 
     steps:
