@@ -5,12 +5,12 @@ on:
     branches: [main, beta]
 
 jobs:
-  prepare:
-    runs-on: ubuntu-latest
-    # Only release if main or beta branch
-    if: github.ref == 'refs/heads/main' || github.ref == 'refs/heads/beta'
-    steps:
-      - run: echo "${{ github.event.head_commit.message }}"
+  # prepare:
+  #   runs-on: ubuntu-latest
+  #   # Only release if main or beta branch
+  #   if: github.ref == 'refs/heads/main' || github.ref == 'refs/heads/beta'
+  #   steps:
+  #     - run: echo "${{ github.event.head_commit.message }}"
 
   prepare-auto-pub:
     runs-on: ubuntu-latest
@@ -34,7 +34,7 @@ jobs:
         if: steps.changed-files-specific.outputs.any_changed != 'true'
         run: echo auto-pub-poc was not updated
 
-  release:
+  release-auto-pub-poc:
     needs: prepare-auto-pub
     runs-on: ubuntu-latest
 
@@ -61,3 +61,53 @@ jobs:
         NPM_TOKEN: ${{ secrets.GH_TOKEN }}
       # working-directory: ./packages/auto-pub-poc
       run: cd packages/auto-pub-poc && npx semantic-release
+
+  prepare-auto-pub2:
+    runs-on: ubuntu-latest
+    name: Prepare for publish of auto pub project
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+
+      - name: Get changed files in the folder
+        id: changed-files-specific
+        uses: tj-actions/changed-files@v34
+        with:
+          files: packages/auto-pub-poc2/**
+
+      - name: Release if any file(s) in the folder change
+        if: steps.changed-files-specific.outputs.any_changed == 'true'
+        run: echo auto-pub-poc2 was updated
+    
+      - name: Release if any file(s) in the folder change
+        if: steps.changed-files-specific.outputs.any_changed != 'true'
+        run: echo auto-pub-poc was not updated
+
+  release-auto-pub-poc2:
+    needs: prepare-auto-pub2
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v3
+    - name: Setup Node.js
+      uses: actions/setup-node@v3
+      with:
+        node-version: 18.x
+        registry-url: 'https://npm.pkg.github.com/'
+        scope: '@chargepoint'
+    - name: Install dependencies
+      run: cd packages/auto-pub-poc2 && npx ci
+    - name: Install semantic-release extra plugins
+      run: cd packages/auto-pub-poc2 && npm install --save-dev @semantic-release/changelog @semantic-release/git      
+    - name: Build
+      run: cd packages/auto-pub-poc2 && npm run build      
+    - name: Release
+      env:
+        GH_TOKEN: ${{ secrets.GH_TOKEN }}
+        GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
+        NODE_AUTH_TOKEN: ${{ secrets.GH_TOKEN }}
+        NPM_TOKEN: ${{ secrets.GH_TOKEN }}
+      # working-directory: ./packages/auto-pub-poc2
+      run: cd packages/auto-pub-poc2 && npx semantic-release
