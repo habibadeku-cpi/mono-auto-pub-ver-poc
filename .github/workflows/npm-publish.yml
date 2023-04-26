@@ -7,7 +7,7 @@ on:
 # Set the package directory for whcih to make a release
 defaults:
   run:
-    working-directory: ./packages/auto-pub-poc
+    working-directory: packages/auto-pub-poc
 
 jobs:
   prepare:
