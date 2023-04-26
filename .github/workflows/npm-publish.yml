@@ -29,9 +29,13 @@ jobs:
       - name: Release if any file(s) in the folder change
         if: steps.changed-files-specific.outputs.any_changed == 'true'
         run: echo auto-pub-poc was updated
+    
+      - name: Release if any file(s) in the folder change
+        if: steps.changed-files-specific.outputs.any_changed != 'true'
+        run: echo auto-pub-poc was not updated
 
   release:
-    needs: [prepare,prepare-auto-pub]
+    needs: prepare-auto-pub
     runs-on: ubuntu-latest
 
     steps:
