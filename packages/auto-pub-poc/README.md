@@ -1,0 +1,1 @@
+# auto-pub-ver-lib-poc

@@ -1,0 +1,46 @@
+{
+  "name": "@chargepoint/auto-pub-ver-lib-poc",
+  "version": "0.0.0",
+  "description": "",
+  "scripts": {
+    "dev": "nodemon --watch lib -e ts,js,json --exec tsc",
+    "build": "npm run clean && tsc",
+    "clean": "rimraf ./dist",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "prepare": "cd ../.. && husky install"
+  },
+  "files": [
+    "lib/",
+    "dist/"
+  ],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@remix-run/router": "^1.3.2",
+    "@types/node": "^18.14.6",
+    "@types/react": "^18.0.28",
+    "@types/react-dom": "^18.0.11",
+    "nodemon": "^2.0.20",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-router": "^6.8.1",
+    "react-router-dom": "^6.9.0",
+    "rimraf": "^4.1.2",
+    "typescript": "^4.9.5",
+    "@commitlint/cli": "^17.6.1",
+    "@commitlint/config-conventional": "^17.6.1",
+    "husky": "^8.0.3"
+  },
+  "main": "./dist/index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/habibadeku-cpi/auto-pub-ver-lib-poc.git"
+  },
+  "bugs": {
+    "url": "https://github.com/habibadeku-cpi/auto-pub-ver-lib-poc/issues"
+  },
+  "homepage": "https://github.com/habibadeku-cpi/auto-pub-ver-lib-poc#readme",
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com"
+  }
+}
