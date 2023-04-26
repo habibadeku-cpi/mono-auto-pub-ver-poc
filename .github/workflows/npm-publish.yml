@@ -41,7 +41,7 @@ jobs:
 
   release-auto-pub-poc:
     needs: prepare-auto-pub
-    if: needs.prepare-auto-pub.steps.changed-files-specific.outputs.status == 'success
+    if: needs.prepare-auto-pub.steps.changed-files-specific.outputs.status == 'success'
     runs-on: ubuntu-latest
 
     steps:
@@ -97,7 +97,7 @@ jobs:
 
   release-auto-pub-poc2:
     needs: prepare-auto-pub2
-    if: needs.prepare-auto-pub2.steps.changed-files-specific.outputs.status == 'success
+    if: needs.prepare-auto-pub2.steps.changed-files-specific.outputs.status == 'success'
     runs-on: ubuntu-latest
 
     steps:
