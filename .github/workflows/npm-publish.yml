@@ -7,13 +7,13 @@ on:
 jobs:
   prepare:
     runs-on: ubuntu-latest
-    if: github.ref
-    steps:
-      - run: echo "${{ github.ref }}"
-    # Only release if main or beta branch
-    # if: github.ref == 'refs/heads/main' || github.ref == 'refs/heads/beta'
+    # if: github.ref
     # steps:
-    #   - run: echo "${{ github.event.head_commit.message }}"
+    #   - run: echo "${{ github.ref }}"
+    # Only release if main or beta branch
+    if: github.ref == 'refs/heads/main' || github.ref == 'refs/heads/beta'
+    steps:
+      - run: echo "${{ github.event.head_commit.message }}"
 
   release:
     needs: prepare
