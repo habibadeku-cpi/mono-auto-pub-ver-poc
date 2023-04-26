@@ -1,5 +1,13 @@
 {
   "name": "@chargepoint/mono-auto-pub-ver-poc",
   "version": "1.0.0",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "@commitlint/cli": "^17.6.1",
+    "@commitlint/config-conventional": "^17.6.1",
+    "husky": "^8.0.3"
+  },
+  "scripts": {
+    "prepare": "husky install"
+  }
 }
