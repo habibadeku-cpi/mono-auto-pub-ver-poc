@@ -31,12 +31,13 @@ jobs:
         if: steps.changed-files-specific.outputs.any_changed == 'true'
         run: echo auto-pub-poc was updated
     
-      - name: Release if any file(s) in the folder change
-        if: steps.changed-files-specific.outputs.any_changed != 'true'
-        run: echo auto-pub-poc was not updated
+      # - name: Release if any file(s) in the folder change
+      #   if: steps.changed-files-specific.outputs.any_changed != 'true'
+      #   run: echo auto-pub-poc was not updated
 
   release-auto-pub-poc:
     needs: prepare-auto-pub
+    if: prepare-auto-pub.steps.changed-files-specific.outputs.any_changed == 'true'
     runs-on: ubuntu-latest
 
     steps:
@@ -82,12 +83,13 @@ jobs:
         if: steps.changed-files-specific.outputs.any_changed == 'true'
         run: echo auto-pub-poc2 was updated
     
-      - name: Release if any file(s) in the folder change
-        if: steps.changed-files-specific.outputs.any_changed != 'true'
-        run: echo auto-pub-poc was not updated
+      # - name: Release if any file(s) in the folder change
+      #   if: steps.changed-files-specific.outputs.any_changed != 'true'
+      #   run: echo auto-pub-poc was not updated
 
   release-auto-pub-poc2:
     needs: prepare-auto-pub2
+    if: prepare-auto-pub2.steps.changed-files-specific.outputs.any_changed == 'true'
     runs-on: ubuntu-latest
 
     steps:
