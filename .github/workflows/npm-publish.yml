@@ -22,8 +22,9 @@ jobs:
 
       - name: Get changed files in the folder
         id: changed-files-specific
-        uses: tj-actions/changed-files@v34
+        uses: tj-actions/changed-files@v35
         with:
+          base_sha: ${{ steps.get-base-sha.outputs.base_sha }}
           files: packages/auto-pub-poc/**
 
       - name: Release if any file(s) in the folder change
@@ -64,7 +65,7 @@ jobs:
 
   prepare-auto-pub2:
     runs-on: ubuntu-latest
-    name: Prepare for publish of auto pub project
+    name: Prepare for publish of auto pub 2 project
     steps:
       - uses: actions/checkout@v3
         with:
@@ -72,8 +73,9 @@ jobs:
 
       - name: Get changed files in the folder
         id: changed-files-specific
-        uses: tj-actions/changed-files@v34
+        uses: tj-actions/changed-files@v35
         with:
+          base_sha: ${{ steps.get-base-sha.outputs.base_sha }}
           files: packages/auto-pub-poc2/**
 
       - name: Release if any file(s) in the folder change
