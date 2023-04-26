@@ -1,3 +1,10 @@
+# [1.1.0](https://github.com/habibadeku-cpi/mono-auto-pub-ver-poc/compare/v1.0.0...v1.1.0) (2023-04-26)
+
+
+### Features
+
+* **update:** update for auto-pub-poc ([2021241](https://github.com/habibadeku-cpi/mono-auto-pub-ver-poc/commit/20212413d83b1b44afa7b2a60e5c30140a6be1ed))
+
 # 1.0.0 (2023-04-26)
 
 
