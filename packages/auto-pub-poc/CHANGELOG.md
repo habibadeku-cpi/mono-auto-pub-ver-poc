@@ -1,3 +1,11 @@
+# [1.3.0](https://github.com/habibadeku-cpi/mono-auto-pub-ver-poc/compare/v1.2.0...v1.3.0) (2023-04-26)
+
+
+### Features
+
+* **update:** added library 2 ([680ea17](https://github.com/habibadeku-cpi/mono-auto-pub-ver-poc/commit/680ea17fdee7c451a4f9d4902ce01bb01371bd23))
+* **update:** added library 2 ([b765fbc](https://github.com/habibadeku-cpi/mono-auto-pub-ver-poc/commit/b765fbcd846aad14519ed6457b25a3a01acbf2ac))
+
 # 1.0.0 (2023-04-26)
 
 
