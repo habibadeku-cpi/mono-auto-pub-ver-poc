@@ -1,0 +1,1 @@
+# mono-auto-pub-ver-poc
