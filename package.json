@@ -5,7 +5,9 @@
   "devDependencies": {
     "@commitlint/cli": "^17.6.1",
     "@commitlint/config-conventional": "^17.6.1",
-    "husky": "^8.0.3"
+    "husky": "^8.0.3",
+    "semantic-release": "^21.0.1",
+    "semantic-release-monorepo": "^7.0.5"
   },
   "scripts": {
     "prepare": "husky install"
