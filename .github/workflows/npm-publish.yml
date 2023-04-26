@@ -15,6 +15,8 @@ jobs:
   prepare-auto-pub:
     runs-on: ubuntu-latest
     name: Prepare for publish of auto pub project
+    outputs:
+      status: ${{ steps.changed-files-specific.conclusion }}
     steps:
       - uses: actions/checkout@v3
         with:
@@ -26,10 +28,12 @@ jobs:
         with:
           base_sha: ${{ steps.get-base-sha.outputs.base_sha }}
           files: packages/auto-pub-poc/**
+          if: steps.changed-files-specific.outputs.any_changed == 'true'
+          run: echo auto-pub-poc was updated
 
-      - name: Release if any file(s) in the folder change
-        if: steps.changed-files-specific.outputs.any_changed == 'true'
-        run: echo auto-pub-poc was updated
+      # - name: Release if any file(s) in the folder change
+      #   if: steps.changed-files-specific.outputs.any_changed == 'true'
+      #   run: echo auto-pub-poc was updated
     
       # - name: Release if any file(s) in the folder change
       #   if: steps.changed-files-specific.outputs.any_changed != 'true'
@@ -37,7 +41,7 @@ jobs:
 
   release-auto-pub-poc:
     needs: prepare-auto-pub
-    if: needs.prepare-auto-pub.steps.changed-files-specific.outputs.any_changed == 'true'
+    if: needs.prepare-auto-pub.steps.changed-files-specific.outputs.status == 'success
     runs-on: ubuntu-latest
 
     steps:
@@ -67,6 +71,8 @@ jobs:
   prepare-auto-pub2:
     runs-on: ubuntu-latest
     name: Prepare for publish of auto pub 2 project
+    outputs:
+      status: ${{ steps.changed-files-specific.conclusion }}
     steps:
       - uses: actions/checkout@v3
         with:
@@ -78,10 +84,12 @@ jobs:
         with:
           base_sha: ${{ steps.get-base-sha.outputs.base_sha }}
           files: packages/auto-pub-poc2/**
+          if: steps.changed-files-specific.outputs.any_changed == 'true'
+          run: echo auto-pub-poc2 was updated
 
-      - name: Release if any file(s) in the folder change
-        if: steps.changed-files-specific.outputs.any_changed == 'true'
-        run: echo auto-pub-poc2 was updated
+      # - name: Release if any file(s) in the folder change
+      #   if: steps.changed-files-specific.outputs.any_changed == 'true'
+      #   run: echo auto-pub-poc2 was updated
     
       # - name: Release if any file(s) in the folder change
       #   if: steps.changed-files-specific.outputs.any_changed != 'true'
@@ -89,7 +97,7 @@ jobs:
 
   release-auto-pub-poc2:
     needs: prepare-auto-pub2
-    if: needs.prepare-auto-pub2.steps.changed-files-specific.outputs.any_changed == 'true'
+    if: needs.prepare-auto-pub2.steps.changed-files-specific.outputs.status == 'success
     runs-on: ubuntu-latest
 
     steps:
