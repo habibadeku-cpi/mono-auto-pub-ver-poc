@@ -1,3 +1,23 @@
+# [1.1.0](https://github.com/habibadeku-cpi/mono-auto-pub-ver-poc/compare/libv2_1.0.0...libv2_1.1.0) (2023-04-27)
+
+
+### Features
+
+* **update:** check output from check step ([aaecf9e](https://github.com/habibadeku-cpi/mono-auto-pub-ver-poc/commit/aaecf9ef76582b3d6382c9bc7221aba7d7acc54c))
+* **update:** check output from check step ([dc2c09e](https://github.com/habibadeku-cpi/mono-auto-pub-ver-poc/commit/dc2c09e9be9ea5c2f083ca5aba4139eda939c402))
+* **update:** check output from check step ([ac3ef94](https://github.com/habibadeku-cpi/mono-auto-pub-ver-poc/commit/ac3ef94ab7463f084097ced5ec7a8611f8cb4a7d))
+* **update:** check output from check step ([0799cdb](https://github.com/habibadeku-cpi/mono-auto-pub-ver-poc/commit/0799cdb306908d9e11ce466d44d4e88ff767817e))
+* **update:** lib 1 update ([13f5a80](https://github.com/habibadeku-cpi/mono-auto-pub-ver-poc/commit/13f5a80abf8f08b9fb9cc3109a4c6ebbc9e006fd))
+* **update:** lib 1 update ([dbf3581](https://github.com/habibadeku-cpi/mono-auto-pub-ver-poc/commit/dbf3581ce3e0382fb7a05c4d92725480d63ebe1c))
+* **update:** lib 1 update ([f43fa22](https://github.com/habibadeku-cpi/mono-auto-pub-ver-poc/commit/f43fa223f2496c2e69a9a80d9fa89212f5c0365b))
+* **update:** lib 1 update ([78938a4](https://github.com/habibadeku-cpi/mono-auto-pub-ver-poc/commit/78938a4b54422889e63469a602746ac40ea361c9))
+* **update:** lib 1 update ([a106a68](https://github.com/habibadeku-cpi/mono-auto-pub-ver-poc/commit/a106a684d64f37c55f975ebbf01f374e68086535))
+* **update:** lib 1 update ([d04a988](https://github.com/habibadeku-cpi/mono-auto-pub-ver-poc/commit/d04a988919a762992ec698bc92c4511a30459379))
+* **update:** update ([e80d035](https://github.com/habibadeku-cpi/mono-auto-pub-ver-poc/commit/e80d0350c90393ab62eda8499c59fd2bf021d4c7))
+* **update:** update ([46171ef](https://github.com/habibadeku-cpi/mono-auto-pub-ver-poc/commit/46171efaf5f8830eb610905b03a73fec75102357))
+* **update:** update ([6ea81b7](https://github.com/habibadeku-cpi/mono-auto-pub-ver-poc/commit/6ea81b7cafaf1c34f92ab622a42ccd2f7fe6c0f5))
+* **update:** update for lib 2 ([67127e6](https://github.com/habibadeku-cpi/mono-auto-pub-ver-poc/commit/67127e6c5b2fa7f4e3e6ad3aa988babf0c1aebf6))
+
 # 1.0.0 (2023-04-26)
 
 
