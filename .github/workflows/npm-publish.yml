@@ -27,11 +27,12 @@ jobs:
         id: changed-files
         uses: tj-actions/changed-files@v35
         with:
-          base_sha: ${{ steps.get-base-sha.outputs.base_sha }}
+          # base_sha: ${{ steps.get-base-sha.outputs.base_sha }}
           files: packages/auto-pub-poc/**
-          if: steps.changed-files.outputs.any_changed != 'true'
-          run: echo auto-pub-poc was updated
 
+      - name: Run if changed files
+        if: steps.changed-files.outputs.any_changed != 'true'
+        run: echo auto-pub-poc was updated
       # - name: Release if any file(s) in the folder change
       #   if: steps.changed-files-specific.outputs.any_changed == 'true'
       #   run: echo auto-pub-poc was updated
