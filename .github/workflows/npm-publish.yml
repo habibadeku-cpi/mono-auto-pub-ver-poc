@@ -16,20 +16,20 @@ jobs:
     runs-on: ubuntu-latest
     name: Prepare for publish of auto pub project
     outputs:      
-      run: echo "${{ steps.changed-files-specific.conclusion }}"
-      status: ${{ steps.changed-files-specific.conclusion }}
+      run: echo "${{ steps.changed-files.conclusion }}"
+      # status: ${{ steps.changed-files-specific.conclusion }}
     steps:
       - uses: actions/checkout@v3
         with:
           fetch-depth: 0
  
       - name: Get changed files in the folder
-        id: changed-files-specific
+        id: changed-files
         uses: tj-actions/changed-files@v35
         with:
           base_sha: ${{ steps.get-base-sha.outputs.base_sha }}
           files: packages/auto-pub-poc/**
-          if: steps.changed-files-specific.outputs.any_changed == 'true'
+          if: steps.changed-files.outputs.any_changed == 'true'
           run: echo auto-pub-poc was updated
 
       # - name: Release if any file(s) in the folder change
@@ -42,7 +42,7 @@ jobs:
 
   release-auto-pub-poc:
     needs: prepare-auto-pub
-    if: needs.prepare-auto-pub.steps.changed-files-specific.outputs.status == 'success'
+    if: needs.prepare-auto-pub.steps.changed-files.outputs.status == 'success'
     runs-on: ubuntu-latest
 
     steps:
