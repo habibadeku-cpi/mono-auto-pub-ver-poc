@@ -29,7 +29,7 @@ jobs:
         with:
           base_sha: ${{ steps.get-base-sha.outputs.base_sha }}
           files: packages/auto-pub-poc/**
-          if: steps.changed-files.outputs.any_changed == 'true'
+          if: steps.changed-files.outputs.any_changed != 'true'
           run: echo auto-pub-poc was updated
 
       # - name: Release if any file(s) in the folder change
