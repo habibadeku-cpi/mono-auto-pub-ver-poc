@@ -1,3 +1,10 @@
+# [1.9.0](https://github.com/habibadeku-cpi/mono-auto-pub-ver-poc/compare/libv2_1.8.0...libv2_1.9.0) (2023-04-27)
+
+
+### Features
+
+* **update:** lib2 config update ([ae1b15e](https://github.com/habibadeku-cpi/mono-auto-pub-ver-poc/commit/ae1b15ee7161d1cb33f5ced66bc52264011f34a0))
+
 # [1.1.0](https://github.com/habibadeku-cpi/mono-auto-pub-ver-poc/compare/libv2_1.0.0...libv2_1.1.0) (2023-04-27)
 
 
