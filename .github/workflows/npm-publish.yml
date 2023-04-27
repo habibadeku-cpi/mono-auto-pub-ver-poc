@@ -12,38 +12,26 @@ jobs:
   #   steps:
   #     - run: echo "${{ github.event.head_commit.message }}"
 
-  prepare-auto-pub:
+  changes:
     runs-on: ubuntu-latest
-    name: Prepare for publish of auto pub project
+    name: Prepare for publish of any projects with updates
     outputs:      
-      run: echo "${{ steps.changed-files.conclusion }}"
-      # status: ${{ steps.changed-files-specific.conclusion }}
+      auto-pub-poc: ${{ steps.changes.outputs.auto-pub-poc }}
+      auto-pub-poc2: ${{ steps.changes.outputs.auto-pub-poc2 }}
     steps:
-      - uses: actions/checkout@v3
-        with:
-          fetch-depth: 0
- 
-      - name: Get changed files in the folder
-        id: changed-files
-        uses: tj-actions/changed-files@v35
-        with:
-          # base_sha: ${{ steps.get-base-sha.outputs.base_sha }}
-          files: packages/auto-pub-poc/**
+    - uses: actions/checkout@v3
+    - uses: dorny/paths-filter@v2
+      id: changes
+      with:
+        filters: |
+          auto-pub-poc:
+            - 'packages/auto-pub-poc/**'
+          auto-pub-poc2:
+            - 'packages/auto-pub-poc2/**' 
 
-      - name: Run if changed files
-        if: steps.changed-files.outputs.any_changed != 'true'
-        run: echo auto-pub-poc was updated
-      # - name: Release if any file(s) in the folder change
-      #   if: steps.changed-files-specific.outputs.any_changed == 'true'
-      #   run: echo auto-pub-poc was updated
-    
-      # - name: Release if any file(s) in the folder change
-      #   if: steps.changed-files-specific.outputs.any_changed != 'true'
-      #   run: echo auto-pub-poc was not updated
-
-  release-auto-pub-poc:
-    needs: prepare-auto-pub
-    if: needs.prepare-auto-pub.steps.changed-files.outputs.status == 'success'
+  auto-pub-poc:
+    needs: changes
+    if: ${{ needs.changes.outputs.auto-pub-poc == 'true' }}
     runs-on: ubuntu-latest
 
     steps:
@@ -70,36 +58,36 @@ jobs:
       # working-directory: ./packages/auto-pub-poc
       run: cd packages/auto-pub-poc && npx semantic-release
 
-  prepare-auto-pub2:
-    runs-on: ubuntu-latest
-    name: Prepare for publish of auto pub 2 project
-    outputs:
-      status: ${{ steps.changed-files-specific.conclusion }}
-    steps:
-      - uses: actions/checkout@v3
-        with:
-          fetch-depth: 0
+  # prepare-auto-pub2:
+  #   runs-on: ubuntu-latest
+  #   name: Prepare for publish of auto pub 2 project
+  #   outputs:
+  #     status: ${{ steps.changed-files-specific.conclusion }}
+  #   steps:
+  #     - uses: actions/checkout@v3
+  #       with:
+  #         fetch-depth: 0
 
-      - name: Get changed files in the folder
-        id: changed-files-specific
-        uses: tj-actions/changed-files@v35
-        with:
-          base_sha: ${{ steps.get-base-sha.outputs.base_sha }}
-          files: packages/auto-pub-poc2/**
-          if: steps.changed-files-specific.outputs.any_changed == 'true'
-          run: echo auto-pub-poc2 was updated
+  #     - name: Get changed files in the folder
+  #       id: changed-files-specific
+  #       uses: tj-actions/changed-files@v35
+  #       with:
+  #         base_sha: ${{ steps.get-base-sha.outputs.base_sha }}
+  #         files: packages/auto-pub-poc2/**
+  #         if: steps.changed-files-specific.outputs.any_changed == 'true'
+  #         run: echo auto-pub-poc2 was updated
 
-      # - name: Release if any file(s) in the folder change
-      #   if: steps.changed-files-specific.outputs.any_changed == 'true'
-      #   run: echo auto-pub-poc2 was updated
+  #     # - name: Release if any file(s) in the folder change
+  #     #   if: steps.changed-files-specific.outputs.any_changed == 'true'
+  #     #   run: echo auto-pub-poc2 was updated
     
-      # - name: Release if any file(s) in the folder change
-      #   if: steps.changed-files-specific.outputs.any_changed != 'true'
-      #   run: echo auto-pub-poc was not updated
+  #     # - name: Release if any file(s) in the folder change
+  #     #   if: steps.changed-files-specific.outputs.any_changed != 'true'
+  #     #   run: echo auto-pub-poc was not updated
 
-  release-auto-pub-poc2:
-    needs: prepare-auto-pub2
-    if: needs.prepare-auto-pub2.steps.changed-files-specific.outputs.status == 'success'
+  auto-pub-poc2:
+    needs: changes
+    if: ${{ needs.changes.outputs.auto-pub-poc2 == 'true' }}
     runs-on: ubuntu-latest
 
     steps:
