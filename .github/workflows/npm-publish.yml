@@ -42,7 +42,7 @@ jobs:
         scope: '@chargepoint'
     - name: Install dependencies
       # run: cd packages/auto-pub-poc && rm -rf node_modules && rm -f package-lock.json && npm i
-      run: rm -rf node_modules && rm -f package-lock.json && npm i
+      run: npx ci
 
     - name: Install semantic-release extra plugins
       # run: cd packages/auto-pub-poc && npm install --save-dev @semantic-release/changelog @semantic-release/git      
@@ -80,7 +80,7 @@ jobs:
         registry-url: 'https://npm.pkg.github.com/'
         scope: '@chargepoint'
     - name: Install dependencies
-      run: rm -f package-lock.json && rm -rf node_modules && npm i
+      run: npx ci
       # run: cd packages/auto-pub-poc2 && rm -f package-lock.json && rm -rf node_modules && npm i
     - name: Install semantic-release extra plugins
       run: npm install --save-dev @semantic-release/changelog @semantic-release/git      
