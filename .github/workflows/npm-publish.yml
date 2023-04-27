@@ -5,9 +5,25 @@ on:
     branches: [main, beta]
 
 jobs:
-  changes:
+  base-dir-check:
     runs-on: ubuntu-latest
-    name: Prepare for publish of any projects with updates
+    name: check base directory
+    outputs:
+      base-dir: ${{ steps.changes.outputs.base-dir }}
+    steps:
+    - uses: actions/checkout@v3
+    - uses: dorny/paths-filter@v2
+      id: changes
+      with:
+        filters: |
+          base-dir:
+            - '/*'
+
+  changes:
+    needs: base-dir-check
+    if: ${{ needs.base-dir-check.outputs.base-dir != 'true' }}
+    runs-on: ubuntu-latest
+    name: prepare for publish for projects with updates
     outputs:      
       auto-pub-poc: ${{ steps.changes.outputs.auto-pub-poc }}
       auto-pub-poc2: ${{ steps.changes.outputs.auto-pub-poc2 }}
