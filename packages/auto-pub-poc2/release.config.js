@@ -25,7 +25,7 @@ module.exports = {
     [
       '@semantic-release/git',
       {
-        assets: ['packages/auto-pub-poc2/CHANGELOG.md', 'packages/auto-pub-poc2/dist/**'],
+        assets: ['CHANGELOG.md', 'dist/**'],
         // eslint-disable-next-line no-template-curly-in-string
         message: 'chore(release): set `package.json` to ${nextRelease.version} [skip ci]\n\n${nextRelease.notes}'
       }
