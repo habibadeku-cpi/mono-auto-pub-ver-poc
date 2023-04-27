@@ -15,13 +15,14 @@ jobs:
   prepare-auto-pub:
     runs-on: ubuntu-latest
     name: Prepare for publish of auto pub project
-    outputs:
+    outputs:      
+      run: echo "${{ steps.changed-files-specific.conclusion }}"
       status: ${{ steps.changed-files-specific.conclusion }}
     steps:
       - uses: actions/checkout@v3
         with:
           fetch-depth: 0
-
+ 
       - name: Get changed files in the folder
         id: changed-files-specific
         uses: tj-actions/changed-files@v35
