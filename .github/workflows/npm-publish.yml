@@ -54,10 +54,10 @@ jobs:
 
     - name: Release
       env:
-        GH_TOKEN: ${{ secrets.GH_TOKEN }}
+        # GH_TOKEN: ${{ secrets.GH_TOKEN }}
         GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
-        # NODE_AUTH_TOKEN: ${{ secrets.GH_TOKEN }}
-        # NPM_TOKEN: ${{ secrets.GH_TOKEN }}
+        NODE_AUTH_TOKEN: ${{ secrets.GH_TOKEN }}
+        NPM_TOKEN: ${{ secrets.GH_TOKEN }}
       run: npx semantic-release
       # run: cd packages/auto-pub-poc && npx semantic-release
 
