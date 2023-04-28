@@ -1,3 +1,12 @@
+# [1.11.0](https://github.com/habibadeku-cpi/mono-auto-pub-ver-poc/compare/libv2_1.10.0...libv2_1.11.0) (2023-04-28)
+
+
+### Features
+
+* **update:** base update ([ccd6542](https://github.com/habibadeku-cpi/mono-auto-pub-ver-poc/commit/ccd65420215898681221a5713890f9f485488611))
+* **update:** base update and lib2 ([32b03e8](https://github.com/habibadeku-cpi/mono-auto-pub-ver-poc/commit/32b03e8ed92b9ad4f2729cef1e91acae40dc20e9))
+* **update:** both libs update ([0b2fa97](https://github.com/habibadeku-cpi/mono-auto-pub-ver-poc/commit/0b2fa97b557962f8b6572cbb119986a45d314af2))
+
 # [1.10.0](https://github.com/habibadeku-cpi/mono-auto-pub-ver-poc/compare/libv2_1.9.0...libv2_1.10.0) (2023-04-28)
 
 
