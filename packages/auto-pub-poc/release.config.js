@@ -11,9 +11,6 @@ module.exports = {
   plugins: [
     '@semantic-release/commit-analyzer',
     '@semantic-release/release-notes-generator',
-    {
-      "extends": "semantic-release-monorepo"
-    },
     [
       '@semantic-release/changelog',
       {
