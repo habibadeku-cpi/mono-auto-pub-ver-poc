@@ -1,6 +1,6 @@
 module.exports = {
   tagFormat: 'libv1_${version}',
-  packages: ["packages/auto-pub-poc/*"],
+  // packages: ["packages/auto-pub-poc/*"],
   branches: [
     'main',
     {
@@ -22,7 +22,7 @@ module.exports = {
     [
       '@semantic-release/git',
       {
-        assets: ['CHANGELOG.md', 'dist/**'],
+        assets: ['CHANGELOG.md'],
         // eslint-disable-next-line no-template-curly-in-string
         message: 'chore(release): set `package.json` to ${nextRelease.version} [skip ci]\n\n${nextRelease.notes}'
       }
