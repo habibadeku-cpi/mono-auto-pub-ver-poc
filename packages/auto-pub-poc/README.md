@@ -1,1 +1,1 @@
-# auto-pub-poc
+# auto-pub-poc project
