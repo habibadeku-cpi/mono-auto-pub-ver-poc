@@ -1,3 +1,14 @@
+# [1.16.0](https://github.com/habibadeku-cpi/mono-auto-pub-ver-poc/compare/libv1_1.15.0...libv1_1.16.0) (2023-06-02)
+
+
+### Features
+
+* **ci-cd:** test cd with unrequired configs ([2aa4556](https://github.com/habibadeku-cpi/mono-auto-pub-ver-poc/commit/2aa455612843ac2cdf1fd8a62938ed19b3102aaf))
+* **ci-cd:** test cd with unrequired configs ([6ad7b91](https://github.com/habibadeku-cpi/mono-auto-pub-ver-poc/commit/6ad7b9152bf4866873d037cb63d6659591724cf2))
+* test cicd ([4b1357d](https://github.com/habibadeku-cpi/mono-auto-pub-ver-poc/commit/4b1357dc8b9b9338bdf5fc7ecfb65600a3c96cff))
+* test cicd ([3c848f3](https://github.com/habibadeku-cpi/mono-auto-pub-ver-poc/commit/3c848f31da9294d97e59e9a93c9b128850a287cc))
+* test cicd ([7a43e2d](https://github.com/habibadeku-cpi/mono-auto-pub-ver-poc/commit/7a43e2da55f705b72f26177ed2f68c98a61099c5))
+
 # [1.15.0](https://github.com/habibadeku-cpi/mono-auto-pub-ver-poc/compare/libv1_1.14.0...libv1_1.15.0) (2023-04-28)
 
 
