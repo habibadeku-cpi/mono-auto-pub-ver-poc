@@ -1,3 +1,10 @@
+# [1.13.0](https://github.com/habibadeku-cpi/mono-auto-pub-ver-poc/compare/libv2_1.12.0...libv2_1.13.0) (2023-04-30)
+
+
+### Features
+
+* **ci-cd:** test cd with unrequired configs ([2aa4556](https://github.com/habibadeku-cpi/mono-auto-pub-ver-poc/commit/2aa455612843ac2cdf1fd8a62938ed19b3102aaf))
+
 # [1.12.0](https://github.com/habibadeku-cpi/mono-auto-pub-ver-poc/compare/libv2_1.11.0...libv2_1.12.0) (2023-04-30)
 
 
