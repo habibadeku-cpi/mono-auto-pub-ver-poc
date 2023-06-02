@@ -1,3 +1,10 @@
+# [1.14.0](https://github.com/habibadeku-cpi/mono-auto-pub-ver-poc/compare/libv2_1.13.0...libv2_1.14.0) (2023-06-02)
+
+
+### Features
+
+* test cicd ([7a43e2d](https://github.com/habibadeku-cpi/mono-auto-pub-ver-poc/commit/7a43e2da55f705b72f26177ed2f68c98a61099c5))
+
 # [1.13.0](https://github.com/habibadeku-cpi/mono-auto-pub-ver-poc/compare/libv2_1.12.0...libv2_1.13.0) (2023-04-30)
 
 
